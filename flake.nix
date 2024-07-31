@@ -26,10 +26,11 @@
 			specialArgs = { inherit inputs; };
 
 			modules = [
-				inputs.home-manager.nixosModules {
+				inputs.home-manager.nixosModules.default
+				{
 					home-manager = {
 						useGlobalPkgs = true;
-						useUserPackages = true;
+						# useUserPackages = true;
 						backupFileExtension = "backup";
 
 						extraSpecialArgs = {

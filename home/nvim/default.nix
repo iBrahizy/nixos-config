@@ -9,7 +9,5 @@
 		package = pkgs.unstable.neovim-unwrapped;
 	};
 
-	environment.variables.EDITOR = "nvim";
-	environment.variables.VISUAL = "nvim";
-	file.".config/nvim".source = ./.;
+	home.file.".config/nvim".source = ./.;
 }

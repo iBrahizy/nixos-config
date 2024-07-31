@@ -4,7 +4,7 @@
 	imports =
 	[ 
 		./hardware-configuration.nix
-		./home
+		# ./home
 	];
 
 	nixpkgs.config.allowUnfree = true;
@@ -39,7 +39,6 @@
 		ripgrep
 		breeze-gtk
 		breeze-qt5
-		breeze-cursors
 		breeze-icons
 		protontricks
 		btop
