@@ -36,6 +36,10 @@
 	};
 
 	environment.defaultPackages = with pkgs; [
+		breeze-gtk
+		breeze-qt5
+		breeze-cursors
+		breeze-icons
 		protontricks
 		btop
 		ksnip
@@ -159,14 +163,6 @@
 	};
 
 	services.flatpak.enable = true;
-
-	programs.nix-ld = {
-		enable = true;
-		libraries = with pkgs; [
-			libz
-			zlib
-		];
-	};
 
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions
