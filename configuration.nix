@@ -36,6 +36,7 @@
 	};
 
 	environment.defaultPackages = with pkgs; [
+		# fantasque-nerd-font
 		ripgrep
 		breeze-gtk
 		breeze-qt5
@@ -52,7 +53,7 @@
 		catppuccin-sddm
 		gcc
 		python3
-		cargo
+		rustup
 		git
 		gnumake
 		xclip
@@ -70,17 +71,7 @@
 		rtkit
 		nixd
 		python312Packages.python-lsp-server
-		rust-analyzer
 	];
-
-	programs.neovim = {
-		enable = true; 
-		# package = unstable.legacyPackages.x86_64-linux.neovim-unwrapped;
-		package = pkgs.unstable.neovim-unwrapped;
-		defaultEditor = true;
-		viAlias = true;
-		vimAlias = true;
-	};
 
 	# Configure keymap in X11
 	services.xserver = {

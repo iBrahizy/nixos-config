@@ -21,16 +21,23 @@
 			};
 		};
 
+		customPackages = import ./packages/default.nix {
+			inherit system;
+			pkgs = nixpkgs.legacyPackages.${system};
+		};
+
 		createConfig = hostname: nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = { inherit inputs; };
 
 			modules = [
+				{
+					fonts.packages = [ customPackages.fantasqueFont ];
+				}
 				inputs.home-manager.nixosModules.default
 				{
 					home-manager = {
 						useGlobalPkgs = true;
-						# useUserPackages = true;
 						backupFileExtension = "backup";
 
 						extraSpecialArgs = {
