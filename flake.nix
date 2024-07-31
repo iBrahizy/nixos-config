@@ -26,7 +26,19 @@
 			specialArgs = { inherit inputs; };
 
 			modules = [
-				inputs.home-manager.nixosModules.default
+				inputs.home-manager.nixosModules {
+					home-manager = {
+						useGlobalPkgs = true;
+						useUserPackages = true;
+						backupFileExtension = "backup";
+
+						extraSpecialArgs = {
+							inherit inputs;
+						};
+
+						users.ibrahizy = import ./home;
+					};
+				}
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix
 				({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 				./configuration.nix

@@ -1,7 +1,7 @@
 { ... }:
 
 {
-	home-manager.users.ibrahizy.programs.fish = {
+	programs.fish = {
 		enable = true;
 		interactiveShellInit = builtins.readFile ./config.fish;
 

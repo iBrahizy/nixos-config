@@ -36,6 +36,7 @@
 	};
 
 	environment.defaultPackages = with pkgs; [
+		ripgrep
 		breeze-gtk
 		breeze-qt5
 		breeze-cursors
