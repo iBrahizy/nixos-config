@@ -1,6 +1,8 @@
 starship init fish | source
 zoxide init fish | source
 
+source $HOME/.config/.lastd
+
 set -g fish_key_bindings fish_vi_key_bindings
 set -U fish_greeting
 
@@ -12,4 +14,10 @@ function n
 	set --export NNN_TMPFILE $file
 	nnn
 	source $file
+end
+
+function cd
+	set file $HOME/.config/.lastd
+	echo "cd $args[0]" > $file 
+	cd $args
 end

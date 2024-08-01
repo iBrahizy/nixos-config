@@ -1,6 +1,10 @@
 { ... }:
 
 {
+	imports = [
+		./hardware-configuration.nix
+	];
+
 	boot.supportedFilesystems = [ "ntfs" ];
 
 	networking.hostName = "gaming";
