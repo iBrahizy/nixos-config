@@ -35,8 +35,12 @@
 		LC_TIME = "en_GB.UTF-8";
 	};
 
+	fonts.packages = with pkgs; [
+		(nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+	];
+
+
 	environment.defaultPackages = with pkgs; [
-		# fantasque-nerd-font
 		ripgrep
 		breeze-gtk
 		breeze-qt5
