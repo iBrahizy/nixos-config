@@ -1,14 +1,17 @@
 { ... }:
 
+let
+	font = "FantasqueSansM Nerd Font";
+in
 {
 	programs.alacritty.enable = true; 
 	programs.alacritty.settings = {
 		font = {
 			size = 16;
-			normal = { family = "FantasqueSansM Nerd Font"; style = "Regular"; };
-			bold = { family = "FantasqueSansM Nerd Font"; style = "Bold"; };
-			italic = { family = "FantasqueSansM Nerd Font"; style = "Italic"; };
-			bold_italic = { family = "FantasqueSansM Nerd Font"; style = "Bold Italic" };
+			normal = { family = font; style = "Regular"; };
+			bold = { family = font; style = "Bold"; };
+			italic = { family = font; style = "Italic"; };
+			bold_italic = { family = font; style = "Bold Italic"; };
 		};
 
 		window = {
