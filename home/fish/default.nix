@@ -3,7 +3,7 @@
 {
 	programs.fish = {
 		enable = true;
-		interactiveShellInit = builtins.readFile ./config.fish;
+		interactiveShellInit = builtins.readFile ./interactive.fish;
 
 		shellAliases = {
 			ls = "lsd";
