@@ -1,7 +1,8 @@
 starship init fish | source
 zoxide init fish | source
 
-source $HOME/.config/.lastd
+set lastd $HOME/.lastd
+source $lastd
 
 set -g fish_key_bindings fish_vi_key_bindings
 set -U fish_greeting
@@ -17,7 +18,7 @@ function n
 end
 
 function cd
-	set file $HOME/.config/.lastd
-	echo "cd $args[0]" > $file 
-	cd $args
+	touch $lastd
+	echo "builtin cd $argv[1]" > $lastd 
+	builtin cd $argv
 end
