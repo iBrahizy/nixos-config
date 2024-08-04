@@ -19,6 +19,12 @@ end
 
 function cd
 	touch $lastd
-	echo "builtin cd $argv[1]" > $lastd 
 	builtin cd $argv
+	echo "builtin cd $(pwd)" > $lastd 
+end
+
+function z
+	touch $lastd
+	__zoxide_z $argv
+	echo "builtin cd $(pwd)" > $lastd 
 end

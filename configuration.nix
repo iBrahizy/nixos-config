@@ -39,6 +39,7 @@
 
 
 	environment.defaultPackages = with pkgs; [
+		capitaine-cursors
 		ripgrep
 		breeze-gtk
 		breeze-qt5
