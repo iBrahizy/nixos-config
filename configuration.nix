@@ -37,9 +37,10 @@
 		(nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 	];
 
-
 	environment.defaultPackages = with pkgs; [
-		capitaine-cursors
+		# capitaine-cursors
+		# kdePackages.breeze
+		apple-cursor
 		ripgrep
 		breeze-gtk
 		breeze-qt5
