@@ -5,11 +5,11 @@
 		enable = true;
 		desktop = null;
 		download = "${config.home.homeDirectory}/downloads";
-		documents = null;
+		documents = "${config.home.homeDirectory}/documents";
 		music = null;
 		pictures = "${config.home.homeDirectory}/pictures";
 		publicShare = null;
 		templates = null;
-		videos = null;
+		videos = "${config.home.homeDirectory}/videos";
 	};
 }
