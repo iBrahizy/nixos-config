@@ -40,7 +40,7 @@
 	environment.defaultPackages = with pkgs; [
 		# capitaine-cursors
 		# kdePackages.breeze
-		apple-cursor
+		ani-cli
 		ripgrep
 		breeze-gtk
 		breeze-qt5
