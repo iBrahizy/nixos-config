@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
 	imports =
 	[ 
 	];
+
+	# apprently needed for nixd to see available packages and other options
+	# ngl i dont think it does anything
+	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -38,8 +42,10 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
-		# capitaine-cursors
-		# kdePackages.breeze
+		pulseaudio
+		vlc
+		obs-studio
+		lumafly
 		ani-cli
 		ripgrep
 		breeze-gtk

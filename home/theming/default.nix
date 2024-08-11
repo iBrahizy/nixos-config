@@ -8,6 +8,6 @@
 		gtk.enable = true;
 		x11.enable = true;
 		name = "phinger-cursors-dark";
-		size = 32;
+		size = 24;
 	};
 }
