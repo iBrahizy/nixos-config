@@ -42,6 +42,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		chromium # I would love to not have chromium but i need it for wootingly
 		pulseaudio
 		vlc
 		obs-studio
