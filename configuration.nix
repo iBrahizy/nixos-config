@@ -5,8 +5,6 @@
 	[ 
 	];
 
-	boot.kernelPackages = pkgs.linuxPackages_latest;
-
 	# needed for nixd to see available packages and other options
 	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
