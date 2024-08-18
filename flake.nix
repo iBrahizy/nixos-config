@@ -37,6 +37,7 @@
 						};
 
 						users.ibrahizy = import ./home;
+						users.root = import ./home;
 					};
 				}
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix
