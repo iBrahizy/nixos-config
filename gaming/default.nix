@@ -7,8 +7,6 @@
 
 	boot.supportedFilesystems = [ "ntfs" ];
 
-	networking.hostName = "gaming";
-
 	# Mount windows drive
 	fileSystems."/mnt/win11" = {
 		device = "/dev/sda3";
