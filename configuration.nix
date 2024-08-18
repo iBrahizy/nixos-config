@@ -5,8 +5,9 @@
 	[ 
 	];
 
-	# apprently needed for nixd to see available packages and other options
-	# ngl i dont think it does anything
+	boot.kernelPackages = pkgs.linuxPackages_latest;
+
+	# needed for nixd to see available packages and other options
 	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
 	nixpkgs.config.allowUnfree = true;
