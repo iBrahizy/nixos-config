@@ -93,8 +93,6 @@
 
 		desktopManager.xterm.enable = false;
 
-		desktopManager.gnome.enable = true;
-
 		windowManager.i3 = {
 			enable = true;
 			extraPackages = with pkgs; [
@@ -117,10 +115,11 @@
 		};
 	};
 
+	services.desktopManager.plasma6.enable = true;
 	services.displayManager.sddm = {
 		enable = true;
 		theme = "catppuccin-mocha";
-		package = pkgs.kdePackages.sddm;
+		# package = pkgs.kdePackages.sddm;
 	};
 
 	# Configure console keymap
