@@ -5,6 +5,9 @@
 		./hardware-configuration.nix
 	];
 
+	modules.virtualisation.enable = true;
+	modules.ssh.enable = true;
+
 	hardware.opengl.enable = true;
 	services.xserver.videoDrivers = [ "nvidia" ];
 	boot.initrd.kernelModules = [ "nvidia" ];
