@@ -52,7 +52,6 @@
 		breeze-qt5
 		breeze-icons
 		protontricks
-		btop
 		ksnip
 		(haskellPackages.ghcWithPackages (haskellPackages: [
 			haskellPackages.xmobar
@@ -74,7 +73,6 @@
 		fd
 		nnn
 		starship
-		git
 		curl
 		tldr
 		fastfetch
