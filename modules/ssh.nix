@@ -1,3 +1,6 @@
+# I have the exact same configuration for ssh between devices, apart from port
+# the motivation behind the module is so that i can keep that configuration but change the port
+
 { lib, config, ... }:
 
 let
