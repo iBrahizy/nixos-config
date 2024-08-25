@@ -16,8 +16,8 @@
 		system = "x86_64-linux";
 		overlay-unstable = final: prev: {
 			unstable = import nixpkgs-unstable {
-			  inherit system;
-			  config.allowUnfree = true;
+				inherit system;
+				config.allowUnfree = true;
 			};
 		};
 
