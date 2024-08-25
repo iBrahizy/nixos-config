@@ -5,8 +5,6 @@
 		./hardware-configuration.nix
 	];
 
-	modules.virtualisation.enable = true;
-
 	# Blacklisting nvidia, relying on the igpu
 	boot.extraModprobeConfig = ''
 		blacklist nouveau
