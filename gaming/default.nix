@@ -27,13 +27,6 @@
 		nameservers = [ "8.8.8.8" ];     
 	};
 
-	# services.openssh = {
-	# 	enable = true;
-	# 	ports = [ 5032 ];
-	# 	settings.PasswordAuthentication = false;
-	# 	settings.PermitRootLogin = false;
-	# };
-
 	modules.ssh.enable = true;
 	modules.ssh.port = 5032;
 
