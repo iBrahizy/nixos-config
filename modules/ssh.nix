@@ -10,7 +10,7 @@ in
 	options.modules.ssh = {
 		enable = lib.mkOption {
 			type = lib.types.bool;
-			default = false;
+			default = true;
 			description = "Enable custom SSH configuration.";
 		};
 

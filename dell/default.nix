@@ -6,7 +6,6 @@
 	];
 
 	modules.virtualisation.enable = true;
-	modules.ssh.enable = true;
 
 	# Blacklisting nvidia, relying on the igpu
 	boot.extraModprobeConfig = ''

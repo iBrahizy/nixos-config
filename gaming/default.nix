@@ -27,7 +27,6 @@
 		nameservers = [ "8.8.8.8" ];     
 	};
 
-	modules.ssh.enable = true;
 	modules.ssh.port = 5032;
 
 	# wooting udev rules
