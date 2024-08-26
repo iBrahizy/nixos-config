@@ -3,9 +3,6 @@
 
 { lib, config, ... }:
 
-let
-	cfg = config.modules.ssh;
-in 
 {
 	options.modules.ssh = {
 		enable = lib.mkOption {
@@ -21,7 +18,7 @@ in
 		};
 	};
 
-	config = lib.mkIf cfg.enable {
+	config = let cfg = config.modules.ssh; in lib.mkIf cfg.enable {
 		services.openssh = {
 			enable = true;
 			ports = [ cfg.port ];
@@ -30,6 +27,10 @@ in
 				PermitRootLogin = "no";
 			};
 		};
+
+		users.users."ibrahizy".openssh.authorizedKeys.keyFiles = [
+			./authorized_keys
+		];
 	};
 }
 

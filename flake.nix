@@ -46,12 +46,12 @@
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix
 				({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 				./configuration.nix
-				./${hostname}
+				./hosts/${hostname}
 			];
 		};
 	in 
 	{
-		nixosConfigurations.gaming = createConfig "gaming";
-		nixosConfigurations.dell = createConfig "dell";
+		nixosConfigurations.sff = createConfig "sff";
+		nixosConfigurations.inspiron = createConfig "inspiron";
 	};
 }
