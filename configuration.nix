@@ -41,6 +41,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		qutebrowser
 		chromium # I would love to not have chromium but i need it for wootingly
 		pulseaudio
 		vlc
@@ -130,7 +131,7 @@
 		shell = pkgs.fish;
 		isNormalUser = true;
 		description = "ibrahizy";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "libvirtd" "proc" ];
 	};
 
 	programs.steam = {
