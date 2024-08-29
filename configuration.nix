@@ -7,6 +7,8 @@
 
 	# needed for nixd to see available packages and other options
 	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+	# !!!!
+	programs.nano.enable = false;
 
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
