@@ -41,7 +41,6 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
-		qutebrowser
 		chromium # I would love to not have chromium but i need it for wootingly
 		pulseaudio
 		vlc
