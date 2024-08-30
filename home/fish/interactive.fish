@@ -28,3 +28,7 @@ function z
 	__zoxide_z $argv
 	echo "builtin cd '$(pwd)'" > $lastd 
 end
+
+function once
+	nix-shell -p $argv[1] --run "$argv"
+end
