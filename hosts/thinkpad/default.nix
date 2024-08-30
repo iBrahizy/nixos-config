@@ -2,6 +2,8 @@
 
 {
 	imports = [
-		./hardware-configuration
+		./hardware-configuration.nix
 	];
+
+	modules.steam.enable = false;
 }
