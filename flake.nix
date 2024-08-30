@@ -53,5 +53,6 @@
 	{
 		nixosConfigurations.sff = createConfig "sff";
 		nixosConfigurations.inspiron = createConfig "inspiron";
+		nixosConfigurations.thinkpad = createConfig "thinkpad";
 	};
 }
