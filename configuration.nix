@@ -61,7 +61,7 @@
 			haskellPackages.xmonad-contrib
 		]))
 		haskellPackages.haskell-language-server
-		catppuccin-sddm
+		where-is-my-sddm-theme
 		gcc
 		python3
 		rustup
@@ -118,7 +118,7 @@
 	services.desktopManager.plasma6.enable = true;
 	services.displayManager.sddm = {
 		enable = true;
-		theme = "catppuccin-mocha";
+		theme = "where_is_my_sddm_theme";
 		# package = pkgs.kdePackages.sddm;
 	};
 
