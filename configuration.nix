@@ -43,6 +43,13 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		(wrapOBS {
+			plugins = with obs-studio-plugins; [
+				wlrobs
+				obs-backgroundremoval
+				obs-pipewire-audio-capture
+			];
+		})
 		chromium # I would love to not have chromium but i need it for wootingly
 		pulseaudio
 		vlc
