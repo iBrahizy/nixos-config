@@ -81,7 +81,6 @@
 		lsd
 		zoxide
 		fd
-		nnn
 		starship
 		curl
 		tldr
