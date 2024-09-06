@@ -128,6 +128,13 @@
 		theme = "where_is_my_sddm_theme";
 		# package = pkgs.kdePackages.sddm;
 	};
+	services.picom.enable = true;
+	services.picom.settings = {
+		vsync = false;
+		backend = "glx";  # Use 'glx' if you find tearing persists.
+		sw-opti = true;  # Enable software-optimized rendering.
+		use-damage = true;  # Only repaint damaged areas for lower overhead.
+	};
 
 	# Configure console keymap
 	console.keyMap = "uk";
