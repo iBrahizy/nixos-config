@@ -23,10 +23,13 @@ function cd
 	echo "builtin cd '$(pwd)'" > $lastd 
 end
 
-function z
-	touch $lastd
-	__zoxide_z $argv
-	echo "builtin cd '$(pwd)'" > $lastd 
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
 end
 
 function once

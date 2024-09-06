@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		yazi
 		(wrapOBS {
 			plugins = with obs-studio-plugins; [
 				wlrobs
