@@ -45,4 +45,13 @@
 		SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", TAG+="uaccess"
 		SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", TAG+="uaccess"
 	'';
+
+	services.picom.enable = true;
+	services.picom.settings = {
+		vsync = false;
+		backend = "glx";  # Use 'glx' if you find tearing persists.
+		sw-opti = true;  # Enable software-optimized rendering.
+		use-damage = true;  # Only repaint damaged areas for lower overhead.
+	};
+
 }
