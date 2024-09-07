@@ -9,14 +9,6 @@ set -U fish_greeting
 
 bind -M insert \v accept-autosuggestion
 
-function n
-	set file $HOME/.config/nnn/.lastd 
-	echo "cd '$(pwd)'" > $file 
-	set --export NNN_TMPFILE $file
-	nnn
-	source $file
-end
-
 function cd
 	touch $lastd
 	builtin cd $argv
