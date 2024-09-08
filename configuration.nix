@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		feh
 		vesktop
 		flameshot
 		yazi
