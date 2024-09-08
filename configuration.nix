@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		vesktop
 		flameshot
 		yazi
 		(wrapOBS {
