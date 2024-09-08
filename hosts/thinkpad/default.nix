@@ -5,5 +5,5 @@
 		./hardware-configuration.nix
 	];
 
-	modules.steam.enable = false;
+	modules.gaming.enable = false;
 }
