@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		flameshot
 		yazi
 		(wrapOBS {
 			plugins = with obs-studio-plugins; [
@@ -61,7 +62,6 @@
 		breeze-qt5
 		breeze-icons
 		protontricks
-		ksnip
 		(haskellPackages.ghcWithPackages (haskellPackages: [
 			haskellPackages.xmobar
 			haskellPackages.xmonad
