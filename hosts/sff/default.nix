@@ -54,4 +54,6 @@
 		use-damage = true;  # Only repaint damaged areas for lower overhead.
 	};
 
+	environment.defaultPackages = [ pkgs.chromium ]; # for wootingly
+
 }
