@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		qbittorrent
 		feh
 		vesktop
 		flameshot
