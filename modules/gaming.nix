@@ -21,7 +21,7 @@
 
 		environment.defaultPackages = with pkgs; [ 
 			unstable.osu-lazer-bin 
-			gamemode # For civ 6 to work this is needed for some reason
+			gamemode # used in some steam launch options (civ 6 in particular)
 		];
 	};
 }
