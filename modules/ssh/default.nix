@@ -3,6 +3,9 @@
 
 { lib, config, ... }:
 
+let
+	cfg = config.modules.ssh;
+in
 {
 	options.modules.ssh = {
 		enable = lib.mkOption {
@@ -18,7 +21,7 @@
 		};
 	};
 
-	config = let cfg = config.modules.ssh; in lib.mkIf cfg.enable {
+	config = lib.mkIf cfg.enable {
 		services.openssh = {
 			enable = true;
 			ports = [ cfg.port ];
