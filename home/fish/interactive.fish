@@ -2,6 +2,7 @@ starship init fish | source
 zoxide init fish | source
 
 set lastd $HOME/.lastd
+touch $lastd
 source $lastd
 
 set -g fish_key_bindings fish_vi_key_bindings
@@ -9,9 +10,7 @@ set -U fish_greeting
 
 bind -M insert \v accept-autosuggestion
 
-function cd
-	touch $lastd
-	builtin cd $argv
+function cd_on_start --on-event fish_prompt
 	echo "builtin cd '$(pwd)'" > $lastd 
 end
 
