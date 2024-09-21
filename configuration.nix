@@ -43,6 +43,7 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		pavucontrol
 		qbittorrent
 		feh
 		vesktop
