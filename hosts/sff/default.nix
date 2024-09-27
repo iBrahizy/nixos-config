@@ -3,6 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
+		./../../modules/river.nix
 	];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
