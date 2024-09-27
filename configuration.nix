@@ -159,10 +159,7 @@
 
 	xdg.portal = {
 		enable = true;
-		extraPortals = with pkgs; [
-			xdg-desktop-portal-kde
-		];
-		config.common.default = "*";
+		wlr.enable = true;
 	};
 
 	# This value determines the NixOS release from which the default
