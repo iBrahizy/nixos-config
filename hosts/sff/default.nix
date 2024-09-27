@@ -34,7 +34,7 @@
 		};
 	};
 
-	services.openshh.ports = [ 5032 ];
+	services.openssh.ports = [ 5032 ];
 
 	# wooting udev rules
 	services.udev.extraRules = ''
