@@ -4,6 +4,7 @@
 	imports = [
 		./hardware-configuration.nix
 		./../../modules/river.nix
+		./../../modules/gaming.nix
 	];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;

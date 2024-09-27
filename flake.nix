@@ -21,12 +21,19 @@
 			};
 		};
 
+	# list will all files under modules/common
+	commonModules = let 
+			dir = ./modules/common;
+			concatDir = (module: "${dir}/${module}");
+			filesInDir = builtins.attrNames (builtins.readDir dir);
+		in
+			builtins.map concatDir filesInDir;
+
 		createConfig = hostname: nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = { inherit inputs; };
 
-			modules = [
-				./modules
+			modules = commonModules ++ [
 				inputs.home-manager.nixosModules.default
 				{
 					networking.hostName = hostname;
