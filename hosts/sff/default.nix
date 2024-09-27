@@ -25,6 +25,11 @@
 
 		defaultGateway = "192.168.1.254";
 		nameservers = [ "8.8.8.8" ];     
+
+		firewall = {
+			allowedTCPPorts = [ 24872 ];
+			allowedUDPPorts = [ 24872 ];
+		};
 	};
 
 	modules.ssh.port = 5032;
@@ -54,6 +59,7 @@
 		use-damage = true;  # Only repaint damaged areas for lower overhead.
 	};
 
-	environment.defaultPackages = [ pkgs.chromium ]; # for wootingly
+	services.flatpak.enable = true;
+	environment.defaultPackages = with pkgs; [ chromium dolphin-emu ]; # for wootingly
 
 }
