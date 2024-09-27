@@ -1,9 +1,9 @@
-{ config, ... }:
+{ flakeRoot, config, ... }:
 
 {
 	imports = [
 		./hardware-configuration.nix
-		./../../modules/gaming.nix
+		/${flakeRoot}/modules/gaming.nix
 	];
 
 	# Blacklisting nvidia, relying on the igpu

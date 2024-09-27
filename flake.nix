@@ -31,7 +31,10 @@
 
 		createConfig = hostname: nixpkgs.lib.nixosSystem {
 			inherit system;
-			specialArgs = { inherit inputs; };
+			specialArgs = { 
+				inherit inputs; 
+				flakeRoot = ./.;
+			};
 
 			modules = commonModules ++ [
 				inputs.home-manager.nixosModules.default
