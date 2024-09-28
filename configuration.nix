@@ -39,6 +39,11 @@
 	];
 
 	environment.defaultPackages = with pkgs; [
+		qt5ct
+		catppuccin-gtk
+		catppuccin-qt5ct
+		catppuccin-cursors
+		catppuccin
 		pavucontrol
 		qbittorrent
 		feh
