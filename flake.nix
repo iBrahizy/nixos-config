@@ -21,8 +21,8 @@
 			};
 		};
 
-	# list will all files under modules/common
-	commonModules = let 
+		# list will all files under modules/common
+		commonModules = let 
 			dir = ./modules/common;
 			concatDir = (module: "${dir}/${module}");
 			filesInDir = builtins.attrNames (builtins.readDir dir);
