@@ -45,10 +45,6 @@
 						useGlobalPkgs = true;
 						backupFileExtension = "backup";
 
-						extraSpecialArgs = {
-							inherit inputs;
-						};
-
 						users.ibrahizy = import ./home;
 						users.root = import ./home;
 					};
