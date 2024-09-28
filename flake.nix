@@ -61,8 +61,12 @@
 		};
 	in 
 	{
-		nixosConfigurations.sff = createConfig "sff";
-		nixosConfigurations.inspiron = createConfig "inspiron";
-		nixosConfigurations.thinkpad = createConfig "thinkpad";
+		# Creates hosts based on the ./hosts directory
+		nixosConfigurations = let
+			hostsDir = ./hosts;
+			hosts = builtins.attrNames (builtins.readDir hostsDir);
+		in
+			builtins.listToAttrs (map (host: { name = host; value = createConfig host; }) hosts);
+
 	};
 }
