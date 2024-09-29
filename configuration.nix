@@ -138,7 +138,7 @@
 
 	# Users
 	users.users.ibrahizy = {
-		# Because fish does indeed exist thanks to home-manager
+		# home-manager provides fish
 		ignoreShellProgramCheck = true;
 		shell = pkgs.fish;
 		isNormalUser = true;

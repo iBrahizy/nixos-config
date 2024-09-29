@@ -1,10 +1,10 @@
-{ flakeRoot, pkgs, ... }:
+{ modules, pkgs, ... }:
 
 {
 	imports = [
 		./hardware-configuration.nix
-		/${flakeRoot}/modules/gaming.nix
-		/${flakeRoot}/modules/river.nix
+		/${modules}/gaming.nix
+		/${modules}/river.nix
 	];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;

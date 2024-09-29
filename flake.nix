@@ -33,7 +33,7 @@
 			inherit system;
 			specialArgs = { 
 				inherit inputs; 
-				flakeRoot = ./.;
+				modules = ./modules;
 			};
 
 			modules = commonModules ++ [
@@ -63,6 +63,5 @@
 			hosts = builtins.attrNames (builtins.readDir hostsDir);
 		in
 			builtins.listToAttrs (map (host: { name = host; value = createConfig host; }) hosts);
-
 	};
 }
