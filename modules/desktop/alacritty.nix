@@ -1,9 +1,10 @@
-{ ... }:
+{ config, ... }:
 
 let
 	font = "FantasqueSansM Nerd Font";
 in
 {
+	home-manager.users.${config.user} = {
 	programs.alacritty.enable = true; 
 	programs.alacritty.settings = {
 		font = {
@@ -27,5 +28,6 @@ in
 		colors.primary = {
 			background = "#1E1E2E";
 		};
+	};
 	};
 }

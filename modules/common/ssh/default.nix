@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ config, ... }:
 
 {
 	services.openssh = {
@@ -9,7 +9,7 @@
 		};
 	};
 
-	users.users."ibrahizy".openssh.authorizedKeys.keyFiles = [
+	users.users."${config.user}".openssh.authorizedKeys.keyFiles = [
 		./authorized_keys
 	];
 }

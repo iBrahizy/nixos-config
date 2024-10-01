@@ -3,7 +3,8 @@
 {
 	imports = [
 		./hardware-configuration.nix
-		/${modules}/gaming.nix
+		/${modules}/gaming
+		/${modules}/desktop
 	];
 
 	# Blacklisting nvidia, relying on the igpu

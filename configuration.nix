@@ -136,16 +136,6 @@
 	# Configure console keymap
 	console.keyMap = "uk";
 
-	# Users
-	users.users.ibrahizy = {
-		# home-manager provides fish
-		ignoreShellProgramCheck = true;
-		shell = pkgs.fish;
-		isNormalUser = true;
-		description = "ibrahizy";
-		extraGroups = [ "networkmanager" "wheel" "libvirtd" "proc" ];
-	};
-
 	hardware.pulseaudio.enable = false;
 	security.rtkit.enable = true;
 	services.pipewire = {

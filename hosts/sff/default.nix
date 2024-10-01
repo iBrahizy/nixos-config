@@ -3,8 +3,8 @@
 {
 	imports = [
 		./hardware-configuration.nix
-		/${modules}/gaming.nix
-		/${modules}/river.nix
+		/${modules}/gaming
+		/${modules}/desktop
 	];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;

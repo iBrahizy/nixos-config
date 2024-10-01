@@ -21,14 +21,6 @@
 			};
 		};
 
-		# list will all files under modules/common
-		commonModules = let 
-			dir = ./modules/common;
-			concatDir = (module: "${dir}/${module}");
-			filesInDir = builtins.attrNames (builtins.readDir dir);
-		in
-			builtins.map concatDir filesInDir;
-
 		createConfig = hostname: nixpkgs.lib.nixosSystem {
 			inherit system;
 			specialArgs = { 
@@ -36,7 +28,7 @@
 				modules = ./modules;
 			};
 
-			modules = commonModules ++ [
+			modules = [
 				inputs.home-manager.nixosModules.default
 				{
 					networking.hostName = hostname;
@@ -44,15 +36,17 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						backupFileExtension = "backup";
-
-						users.ibrahizy = import ./home;
-						users.root = import ./home;
+						
+						users.ibrahizy.home.stateVersion = "24.05";
+						# users.ibrahizy = import ./home;
+						# users.root = import ./home;
 					};
 				}
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix
 				({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
 				./configuration.nix
 				./hosts/${hostname}
+				./modules/common
 			];
 		};
 	in 
