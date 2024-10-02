@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+	environment.defaultPackages = with pkgs; [
+		catppuccin-gtk
+		catppuccin-qt5ct
+		catppuccin-cursors
+	];
+
 	home-manager.users.${config.user} = {
 		home.pointerCursor = {
 			package = pkgs.catppuccin-cursors.frappeDark;

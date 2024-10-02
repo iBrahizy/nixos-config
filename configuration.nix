@@ -34,54 +34,10 @@
 		LC_TIME = "en_GB.UTF-8";
 	};
 
-	fonts.packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-	];
-
 	environment.defaultPackages = with pkgs; [
-		qt5ct
-		catppuccin-gtk
-		catppuccin-qt5ct
-		catppuccin-cursors
-		catppuccin
-		pavucontrol
-		qbittorrent
-		feh
-		vesktop
-		flameshot
 		yazi
-		(wrapOBS {
-			plugins = with obs-studio-plugins; [
-				wlrobs
-				obs-backgroundremoval
-				obs-pipewire-audio-capture
-			];
-		})
-		pulseaudio
-		vlc
-		obs-studio
-		lumafly
-		ani-cli
 		ripgrep
-		breeze-gtk
-		breeze-qt5
-		breeze-icons
-		protontricks
-		(haskellPackages.ghcWithPackages (haskellPackages: [
-			haskellPackages.xmobar
-			haskellPackages.xmonad
-			haskellPackages.xmonad-contrib
-		]))
-		haskellPackages.haskell-language-server
-		where-is-my-sddm-theme
-		gcc
-		python3
-		rustup
 		git
-		gnumake
-		xclip
-		firefox
-		alacritty
 		lsd
 		zoxide
 		fd
@@ -89,63 +45,10 @@
 		curl
 		tldr
 		fastfetch
-		rtkit
 		nixd
-		python312Packages.python-lsp-server
 	];
-
-	# Configure keymap in X11
-	services.xserver = {
-		enable = true;
-		xkb = {
-			layout = "gb";
-			variant = "";
-		};
-
-		desktopManager.xterm.enable = false;
-
-		windowManager.i3 = {
-			enable = true;
-			extraPackages = with pkgs; [
-				dmenu
-				i3status
-			];
-		};
-
-		windowManager.xmonad = {
-			enable = true;
-			# enableContribAndExtras = true;
-
-			# extraPackages = haskellPackages: [
-			# 	haskellPackages.dbus
-			# 	haskellPackages.xmonad-contrib
-			# 	haskellPackages.monad-logger
-			# ];
-
-			# config = builtins.readFile ./home/xmonad.hs;
-		};
-	};
-
-	services.desktopManager.plasma6.enable = true;
 	# Configure console keymap
 	console.keyMap = "uk";
-
-	hardware.pulseaudio.enable = false;
-	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-		# If you want to use JACK applications, uncomment this
-		#jack.enable = true;
-		wireplumber.enable = true;
-	};
-
-	xdg.portal = {
-		enable = true;
-		wlr.enable = true;
-	};
 
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions

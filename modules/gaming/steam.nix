@@ -13,7 +13,7 @@
 	};
 
 	environment.defaultPackages = with pkgs; [ 
-		unstable.osu-lazer-bin 
-		gamemode # used in some steam launch options (civ 6 in particular)
+		gamemode # used in some steam launch options 
+		protontricks
 	];
 }

@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
 	options.modules.display-manager = lib.mkOption {
@@ -7,6 +7,8 @@
 	};
 
 	config = lib.mkIf (config.modules.display-manager == "sddm") {
+		environment.defaultPackages = [ pkgs.where-is-my-sddm-theme ];
+
 		services.displayManager.sddm = {
 			enable = true;
 			theme = "where_is_my_sddm_theme";

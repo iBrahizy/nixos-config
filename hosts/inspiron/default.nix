@@ -5,6 +5,7 @@
 		./hardware-configuration.nix
 		/${modules}/gaming
 		/${modules}/desktop
+		/${modules}/dev
 	];
 
 	modules.display-manager = "gdm";

@@ -5,6 +5,7 @@
 		./hardware-configuration.nix
 		/${modules}/gaming
 		/${modules}/desktop
+		/${modules}/dev
 	];
 
 	boot.kernelPackages = pkgs.linuxPackages_latest;
