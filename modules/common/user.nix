@@ -12,7 +12,7 @@
 			ignoreShellProgramCheck = true;
 			shell = pkgs.fish;
 			isNormalUser = true;
-			description = "main user";
+			description = config.user;
 			extraGroups = [ "networkmanager" "wheel" "libvirtd" "proc" ];
 		};
 
