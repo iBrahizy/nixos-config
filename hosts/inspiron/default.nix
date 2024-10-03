@@ -49,4 +49,8 @@
 	# 	intelBusId = "PCI:0:2:0";
 	# 	nvidiaBusId = "PCI:1:0:0";
 	# };
+
+	# version nix was originally installed on
+	system.stateVersion = "24.05";
+	home-manager.users.ibrahizy.home.stateVersion = "24.05";
 }

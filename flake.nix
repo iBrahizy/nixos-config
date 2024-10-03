@@ -36,10 +36,6 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						backupFileExtension = "backup";
-						
-						users.ibrahizy.home.stateVersion = "24.05";
-						# users.ibrahizy = import ./home;
-						# users.root = import ./home;
 					};
 				}
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix

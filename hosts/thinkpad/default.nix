@@ -5,5 +5,7 @@
 		./hardware-configuration.nix
 	];
 
-	modules.gaming.enable = false;
+	# version nix was originally installed on
+	system.stateVersion = "24.05";
+	home-manager.users.ibrahizy.home.stateVersion = "24.05";
 }
