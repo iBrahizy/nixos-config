@@ -4,6 +4,7 @@
 	programs.river.enable = true;
 
 	environment.defaultPackages = with pkgs; [
+		wl-color-picker
 		slurp
 		libinput
 		river
