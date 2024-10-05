@@ -35,6 +35,9 @@
 	};
 
 	environment.defaultPackages = with pkgs; [
+		# nvim treesitter needs gcc
+		gcc
+		gnumake
 		yazi
 		ripgrep
 		git
