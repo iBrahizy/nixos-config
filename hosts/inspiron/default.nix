@@ -9,6 +9,7 @@
 	];
 
 	modules.display-manager = "gdm";
+	modules.uniJava.enable = true;
 
 	# Blacklisting nvidia, relying on the igpu
 	boot.extraModprobeConfig = ''
