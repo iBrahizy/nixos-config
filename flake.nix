@@ -26,6 +26,7 @@
 			specialArgs = { 
 				inherit inputs; 
 				modules = ./modules;
+				flakeRoot = ./.;
 			};
 
 			modules = [

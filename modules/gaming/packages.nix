@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ flakeRoot, pkgs, ... }:
 
 {
-	environment.defaultPackages = with pkgs; [
-		unstable.osu-lazer-bin
-		lumafly
+	environment.defaultPackages = [
+		pkgs.lumafly
+		(pkgs.callPackage /${flakeRoot}/packages/osu-lazer-bin.nix {})
 	];
 }
