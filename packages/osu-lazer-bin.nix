@@ -1,3 +1,5 @@
+# Adapted from https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/os/osu-lazer-bin/package.nix
+
 { lib
 , fetchurl
 , appimageTools
