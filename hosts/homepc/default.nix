@@ -4,6 +4,7 @@
 	imports = [
 		./hardware-configuration.nix
 		/${modules}/desktop
+		/${modules}/gaming
 	];
 
 	# Mount windows drive
