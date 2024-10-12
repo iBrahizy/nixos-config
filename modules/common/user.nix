@@ -17,17 +17,17 @@
 		};
 
 		home-manager.users.${config.user}.xdg.userDirs = 
-			let 
-				homeDir = config.home-manager.users.${config.user}.home.homeDirectory;
-			in {
+		let 
+			homeDir = config.home-manager.users.${config.user}.home.homeDirectory;
+		in 
+		{
 			enable = true;
-			# I wanted to keep desktop null but it seems to always create one for me even when i delete it
-			desktop = "${homeDir}/desktop";
+			desktop = "${homeDir}/other/desktop";
 			download = "${homeDir}/downloads";
-			documents = "${homeDir}/documents";
+			documents = "${homeDir}/other/documents";
 			music = null;
-			pictures = "${homeDir}/pictures";
-			publicShare = null;
+			pictures = "${homeDir}/images";
+			publicShare = "${homeDir}/other/share";
 			templates = null;
 			videos = "${homeDir}/videos";
 		};
