@@ -8,8 +8,6 @@
 		/${modules}/dev
 	];
 
-	boot.kernelPackages = pkgs.linuxPackages_latest;
-
 	boot.supportedFilesystems = [ "ntfs" ];
 
 	# Static ip

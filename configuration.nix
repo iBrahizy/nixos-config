@@ -9,9 +9,13 @@
 	nixpkgs.config.allowUnfree = true;
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+
 	# Bootloader.
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
+
+	# Newer kernel
+	boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	# Enable networking
 	networking.networkmanager.enable = true;
