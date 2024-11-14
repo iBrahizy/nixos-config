@@ -8,5 +8,6 @@
 		rustup
 		ghc
 		haskell-language-server
+		cabal-install
 	];
 }
