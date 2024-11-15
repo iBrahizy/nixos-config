@@ -2,7 +2,7 @@
 
 {
 	environment.defaultPackages = with pkgs; [ 
-		qbittorrent
+		unstable.qbittorrent # stable version has a security issue right now
 		pavucontrol
 		feh
 		vesktop
