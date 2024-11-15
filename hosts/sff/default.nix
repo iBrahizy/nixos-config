@@ -10,6 +10,8 @@
 
 	boot.supportedFilesystems = [ "ntfs" ];
 
+	modules.uniJava.enable = true;
+
 	# Static ip
 	# networking = {
 	# 	interfaces.eno1.ipv4.addresses = [{

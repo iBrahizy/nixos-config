@@ -14,6 +14,9 @@
 			jdk
 			gradle
 			postman
+
+			# technically not just "java" hopefully here temporarily 
+			openfortivpn
 		];
 	};
 }
