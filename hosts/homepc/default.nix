@@ -5,7 +5,10 @@
 		./hardware-configuration.nix
 		/${modules}/desktop
 		/${modules}/gaming
+		/${modules}/dev
 	];
+
+	modules.uniJava.enable = true;
 
 	# Mount windows drive
 	fileSystems."/mnt/win11" = {
