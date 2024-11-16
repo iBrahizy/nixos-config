@@ -6,11 +6,10 @@
 		/${modules}/gaming
 		/${modules}/desktop
 		/${modules}/dev
+		/${modules}/uni
 	];
 
 	boot.supportedFilesystems = [ "ntfs" ];
-
-	modules.uniJava.enable = true;
 
 	# Static ip
 	# networking = {
