@@ -36,6 +36,8 @@
 
 					"`" = "`";
 					esc = "`";
+
+					backspace = "delete";
 				}; 
 
 		};
