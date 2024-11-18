@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+	environment.defaultPackages = with pkgs; [
+		lua-language-server
+	];
+
 	home-manager.users.${config.user} = {
 		programs.neovim = {
 			enable = true;
