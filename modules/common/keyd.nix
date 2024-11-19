@@ -1,44 +1,49 @@
-{ lib, ... }:
+{ ... }:
 
 {
 	services.keyd = {
 		enable = true;
 
 		keyboards.default.settings = {
+			global = {
+				overload_tap_timeout = 400;
+			};
+
 			main = {
 				# 102nd is backslash on the uk layout
 				"102nd" = "overload(backslash-overlay, 102nd)";
-
 				# For consistancy with the 60%
 				"`" = "esc";
 			};
 
-			backslash-overlay = 
-			let
-				range = lib.range 1 9;
-				toFAttribute = (x: { "${x}" = "f${x}"; });
-				f = (x: acc: acc // toFAttribute (toString x));
-				# \ + 1..9 will be mapped to F1..F9
-				fKeysAttributes = lib.fold f {} range;
-			in
-				fKeysAttributes // 
-				{
-					"0" = "f10";
-					"-" = "f11";
+			backslash-overlay = {
+				"1" = "f1";
+				"2" = "f2";
+				"3" = "f3";
+				"4" = "f4";
+				"5" = "f5";
+				"6" = "f6";
+				"7" = "f7";
+				"8" = "f8";
+				"9" = "f9";
+				"0" = "f10";
+				"-" = "f11";
 
-					h = "left";
-					j = "down";
-					k = "up";
-					l = "right";
+				h = "left";
+				j = "down";
+				k = "up";
+				l = "right";
 
-					u = "pagedown";
-					i = "pageup";
+				u = "pagedown";
+				i = "pageup";
 
-					"`" = "`";
-					esc = "`";
+				"`" = "`";
+				esc = "`";
 
-					backspace = "delete";
-				}; 
+				backspace = "delete";
+
+				o = "enter";
+			}; 
 
 		};
 
