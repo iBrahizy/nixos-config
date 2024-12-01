@@ -1,4 +1,4 @@
-{ ... }:
+{ flakeRoot, pkgs, ... }:
 
 {
 	# Imports everything in this directory apart from itself (default.nix)
