@@ -9,6 +9,8 @@
 		/${modules}/uni
 	];
 
+	modules.tablet.enable = true;
+
 	boot.supportedFilesystems = [ "ntfs" ];
 
 	# Static ip
