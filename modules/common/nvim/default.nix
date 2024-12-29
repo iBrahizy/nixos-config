@@ -18,4 +18,8 @@
 		home.file.".config/nvim".source = ./.;
 	};
 
+	environment.sessionVariables = {
+		EDITOR = "nvim";
+		VISUAL = "nvim";
+	};
 }
