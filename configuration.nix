@@ -52,6 +52,7 @@
 		tldr
 		fastfetch
 		nixd
+		nil
 	];
 	# Configure console keymap
 	console.keyMap = "uk";
