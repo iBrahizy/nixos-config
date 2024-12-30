@@ -1,0 +1,34 @@
+theme = "my-catppuccin"
+
+[editor]
+auto-format = false
+color-modes = true
+completion-timeout = 20
+completion-trigger-len = 1
+cursorline = true
+idle-timeout = 20
+popup-border = "all"
+true-color = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.gutters]
+layout = ["diagnostics", "spacer", "line-numbers", "spacer"]
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+"+" = "format_selections"
+0 = "goto_line_start"
+"=" = ":format"
+A-x = "extend_to_line_bounds"
+D = ["collapse_selection", "select_mode", "goto_line_end", "delete_selection"]
+X = "select_line_above"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
+[keys.select]
+A-x = "extend_to_line_bounds"
+X = "select_line_above"

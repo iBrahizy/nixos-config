@@ -1,63 +1,44 @@
 { config, ... }:
 
+let
+	readTOML = file: builtins.fromTOML (builtins.readFile file);
+in
 {
 	home-manager.users.${config.user} = {
-	programs.helix = {
-		enable = true;
+		programs.helix = {
+			enable = true;
 
-		settings = {
-			theme = "my-catppuccin";
+			settings = readTOML ./config.toml;
 
-			editor = {
-				cursorline = true;
-				true-color = true;
-				idle-timeout = 20;
-				completion-timeout = 20;
-				completion-trigger-len = 1;
-				auto-format = false;
-				color-modes = true;
-				popup-border = "all";
-
-				indent-guides = {
-					render = true;
-				};
-
-				cursor-shape = {
-					insert = "bar";
-				};
-
-				gutters = {
-					layout = [ "diagnostics" "spacer" "line-numbers" "spacer" ];
-				};
+			languages = {
+				language = [
+					{
+						name = "nix";
+						indent = { tab-width = 4; unit = "\t"; };
+					}
+					{
+						name = "rust";
+						indent = { tab-width = 4; unit = "\t"; };
+					}
+					{
+						name = "ruby";
+						indent = { tab-width = 2; unit = " "; };
+					}
+				];
 			};
 
-			keys = {
-				normal = {
-					A-x = "extend_to_line_bounds";
-					X = "select_line_above";
-					"0" = "goto_line_start";
-					D = [ "collapse_selection" "select_mode" "goto_line_end" "delete_selection" ];
-					"{" = "goto_prev_paragraph";
-					"}" = "goto_next_paragraph";
-					"=" = ":format";
-					"+" = "format_selections";
-				};
+			# Reads all themes in ./themes
+			themes = builtins.foldl' (acc: theme:
+				acc // {
+			      "${builtins.attrName theme}" = readTOML theme;
+			    }
+			) {} (builtins.readDir ./themes);
 
-				select = {
-					A-x = "extend_to_line_bounds";
-					X = "select_line_above";
-				};
-			};
+			# languages = builtins.foldl' (acc: theme:
+			# 	acc // {
+			#       "${builtins.attrName theme}" = readTOML theme;
+			#     }
+			# ) {} builtins.readDir ./themes;
 		};
-
-		languages = {
-			language = [{
-				name = "nix";
-				indent = { tab-width = 4; unit = "\t"; };
-			}];
-		};
-
-		themes.my-catppuccin = builtins.fromTOML (builtins.readFile ./my-catppuccin.toml);
-	};
 	};
 }
