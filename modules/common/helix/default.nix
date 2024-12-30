@@ -2,6 +2,7 @@
 
 let
 	readTOML = file: builtins.fromTOML (builtins.readFile file);
+	dbg = x: builtins.trace (x) (x);
 in
 {
 	home-manager.users.${config.user} = {
@@ -28,11 +29,19 @@ in
 			};
 
 			# Reads all themes in ./themes
-			themes = builtins.foldl' (acc: theme:
-				acc // {
-			      "${builtins.attrName theme}" = readTOML theme;
-			    }
-			) {} (builtins.readDir ./themes);
+			themes = let
+				themes = builtins.attrNames (builtins.readDir ./themes);
+				removeFileExtention = fileName: 
+					let
+						parts = builtins.split "." fileName;
+				    in
+						builtins.head parts;
+			in
+				builtins.foldl' (acc: theme:
+					acc // {
+				      "${removeFileExtention theme}" = readTOML ./themes/${theme};
+				    }
+				) {} themes;
 
 			# languages = builtins.foldl' (acc: theme:
 			# 	acc // {
