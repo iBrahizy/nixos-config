@@ -5,6 +5,7 @@
 	home-manager.users.${config.user} = {
 		programs.helix= {
 			enable = true;
+			defaultEditor = true;
 
 			package = pkgs.unstable.helix;
 		};

@@ -7,7 +7,7 @@
 		userName = "Ibrahim Mahmood-Qureshi";
 
 		extraConfig = {
-			core.editor = "nvim";
+			core.editor = "hx";
 		};
 	};
 }
