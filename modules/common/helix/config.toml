@@ -37,7 +37,6 @@ x = ["goto_line_start", "select_mode", "goto_line_end_newline"]
 X = ["goto_line_start", "select_mode", "goto_line_end_newline"]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
-a = ["append_mode", "collapse_selection"]
 
 [keys.normal."space"]
 "f" = "file_picker_in_current_directory"
