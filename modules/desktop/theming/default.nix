@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 
+let 
+	custom-catppuccin-gtk = (pkgs.catppuccin-gtk.override { variant = "mocha"; });
+in
 {
-	environment.defaultPackages = with pkgs; [
-		catppuccin-gtk
-		catppuccin-qt5ct
-		catppuccin-cursors
+	environment.defaultPackages = [
+		custom-catppuccin-gtk
+
+		# Probably don't need this, I'm keeping it because you DO need the above one
+		# It's weird that you need one but not the other
+		pkgs.catppuccin-cursors
 	];
 
 	home-manager.users.${config.user} = {
@@ -24,9 +29,9 @@
 
 		gtk = {
 			enable = true;
-			theme.name = "catppuccin-frappe-blue-standard";
-			theme.package = pkgs.catppuccin-gtk;
-		};
+			theme.name = "catppuccin-mocha-blue-standard";
+			theme.package = custom-catppuccin-gtk;
+		};	
 	};
 }
 
