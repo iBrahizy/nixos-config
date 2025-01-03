@@ -1,4 +1,4 @@
-{ config, lib, flakeRoot, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 	options.modules.tablet.enable = lib.mkOption {
@@ -9,7 +9,7 @@
 	config = lib.mkIf config.modules.tablet.enable {
 		hardware.opentabletdriver = {
 			enable = true;
-			package = (pkgs.callPackage /${flakeRoot}/packages/open-tablet-driver {});
+			package = pkgs.unstable.opentabletdriver;
 		};
 	};
 }
