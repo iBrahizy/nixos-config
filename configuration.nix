@@ -47,6 +47,8 @@
 		lsd
 		zoxide
 		fd
+		fzf
+		sd
 		starship
 		curl
 		tldr
