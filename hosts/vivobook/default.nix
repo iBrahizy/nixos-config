@@ -9,7 +9,6 @@
 		/${modules}/uni
 	];
 
-	modules.display-manager = "ly";
 	powerManagement.enable = true;
 
 	system.stateVersion = "24.05";

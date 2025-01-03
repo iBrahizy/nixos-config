@@ -9,8 +9,6 @@
 		/${modules}/uni
 	];
 
-	modules.display-manager = "ly";
-
 	# Mount windows drive
 	fileSystems."/mnt/win11" = {
 		device = "/dev/sda3";
