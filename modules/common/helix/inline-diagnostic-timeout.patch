@@ -1,0 +1,13 @@
+diff --git a/helix-view/src/handlers/diagnostics.rs b/helix-view/src/handlers/diagnostics.rs
+index 2b8ff632..cc0c0e8f 100644
+--- a/helix-view/src/handlers/diagnostics.rs
++++ b/helix-view/src/handlers/diagnostics.rs
+@@ -21,7 +21,7 @@ struct DiagnosticTimeout {
+     generation: usize,
+ }
+ 
+-const TIMEOUT: Duration = Duration::from_millis(350);
++const TIMEOUT: Duration = Duration::from_millis(0);
+ 
+ impl AsyncHook for DiagnosticTimeout {
+     type Event = DiagnosticEvent;

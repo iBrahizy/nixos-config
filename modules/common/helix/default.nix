@@ -7,7 +7,9 @@
 			enable = true;
 			defaultEditor = true;
 
-			package = pkgs.unstable.helix;
+			package = (pkgs.unstable.helix.overrideAttrs (_: {
+				patches = [ ./inline-diagnostic-timeout.patch ];
+			}));
 		};
 
 		home.file.".config/helix".source = ./.;
