@@ -3,6 +3,7 @@
 {
 	imports = [
 		./hardware-configuration.nix
+		./liquidctl.nix
 		/${modules}/gaming
 		/${modules}/desktop
 		/${modules}/dev
