@@ -21,6 +21,11 @@
 				    inherit src;
 				    outputHash = "sha256-siOrpSgvvdVINAgVFpU77gFHtPes0N1lngQYDYhRWgU=";
 				});
+
+				postPatch = ''
+					substituteInPlace helix-view/src/handlers/diagnostics.rs \
+						--replace "const TIMEOUT: Duration = Duration::from_millis(350);" "const TIMEOUT: Duration = Duration::from_millis(0);"
+					'';
 			}));
 		};
 
