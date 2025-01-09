@@ -9,6 +9,11 @@
 			url = "github:nix-community/home-manager/release-24.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		nixvim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
+		};
 	};
 
 	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
@@ -31,6 +36,7 @@
 
 			modules = [
 				inputs.home-manager.nixosModules.default
+				inputs.nixvim.nixosModules.nixvim
 				{
 					networking.hostName = hostname;
 
