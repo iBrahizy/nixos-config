@@ -11,7 +11,7 @@
 		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ...}:
+	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
 	let
 		system = "x86_64-linux";
 		overlay-unstable = final: prev: {

@@ -1,7 +1,6 @@
 { pkgs, config, ... }:
 
 {
-	
 	home-manager.users.${config.user} = {
 		programs.helix = {
 			enable = true;
