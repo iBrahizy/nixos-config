@@ -1,15 +1,15 @@
-{ pkgs, config, ... }:
+{ flakeRoot, pkgs, config, ... }:
 
+let
+	helix-patched = (pkgs.callPackage ./${flakeRoot}/packages/helix-bin-patch {});
+in
 {
-	
 	home-manager.users.${config.user} = {
 		programs.helix= {
 			enable = true;
 			defaultEditor = true;
 
-			package = (pkgs.unstable.helix.overrideAttrs (_: {
-				patches = [ ./inline-diagnostic-timeout.patch ];
-			}));
+			package = helix-patched;
 		};
 
 		home.file.".config/helix".source = ./.;
