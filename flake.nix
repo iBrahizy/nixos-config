@@ -12,7 +12,16 @@
 
 		nixvim = {
 			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+			inputs = {
+				nixpkgs.follows = "nixpkgs-unstable";
+				home-manager.follows = "home-manager";
+
+				devshell.follows = "";
+				flake-compat.follows = "";
+				git-hooks.follows = "";
+				nix-darwin.follows = "";
+				treefmt-nix.follows = "";
+			};
 		};
 	};
 
