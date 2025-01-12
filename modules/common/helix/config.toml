@@ -22,10 +22,11 @@ layout = ["diagnostics", "spacer", "line-numbers", "spacer"]
 render = true
 
 [editor.statusline]
-left = ["mode", "separator", "version-control", "file-name", "spinner", 
+left = ["mode", "separator", "version-control", "file-name",
   "file-modification-indicator", "read-only-indicator"]
 center = []
-right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+right = ["spinner", "separator", "diagnostics", "selections", "register",
+  "position", "file-encoding"]
 separator = " "
 
 [editor.inline-diagnostics]
@@ -33,10 +34,12 @@ cursor-line = "hint"
 other-lines = "disable"
 
 [keys.normal]
-"+" = "format_selections"
 0 = "goto_line_start"
+G = "goto_last_line"
+"+" = "format_selections"
 "=" = ":format"
 D = ["collapse_selection", "extend_to_line_end", "delete_selection"]
+C = ["collapse_selection", "extend_to_line_end", "change_selection"]
 L = ["collapse_selection", "extend_to_line_end"] 
 H = ["collapse_selection", "extend_to_line_start"] 
 x = ["goto_line_start", "select_mode", "goto_line_end_newline"]
@@ -47,11 +50,15 @@ X = ["goto_line_start", "select_mode", "goto_line_end_newline"]
 "A-e" = "move_next_sub_word_end"
 "A-w" = "move_next_sub_word_start"
 "A-b" = "move_prev_sub_word_start"
+"K" = "hover"
+"C-k" = "keep_selections"
+"A-c" = "copy_selection_on_next_line"
 
 [keys.normal."space"]
 "f" = "file_picker_in_current_directory"
 "F" = "file_picker"
 "w" = ":w"
+"k" = "no_op"
 
 [keys.select]
 X = "select_line_above"
@@ -59,6 +66,8 @@ X = "select_line_above"
 "}" = "goto_next_paragraph"
 L = "extend_to_line_end"
 H = "extend_to_line_start"
+"C-k" = "keep_selections"
+"K" = "no_op"
 
 [keys.insert]
 "C-space" = "completion"
