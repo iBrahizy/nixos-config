@@ -9,13 +9,6 @@
 		/${modules}/uni
 	];
 
-	# Mount windows drive
-	fileSystems."/mnt/win11" = {
-		device = "/dev/sda3";
-		fsType = "ntfs-3g";
-		options = [ "rw" "uid=0" ];
-	};
-	
 	services.xserver.videoDrivers = [ "nvidia" ];
 
 	hardware.graphics.enable = true;

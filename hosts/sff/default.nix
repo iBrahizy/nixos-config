@@ -13,6 +13,13 @@
 	modules.tablet.enable = true;
 
 	boot.supportedFilesystems = [ "ntfs" ];
+	
+	# Mount windows drive
+	fileSystems."/mnt/win11" = {
+		device = "/dev/sda3";
+		fsType = "ntfs-3g";
+		options = [ "rw" "uid=0" ];
+	};
 
 	# Static ip
 	# networking = {
@@ -53,6 +60,7 @@
 	environment.defaultPackages = with pkgs; [ chromium dolphin-emu ]; # for wootingly
 
 	# version nix was originally installed on
-	system.stateVersion = "24.05";
+	# they're mismatched because I reinstalled, but kept the home partition
+	system.stateVersion = "24.11";
 	home-manager.users.ibrahizy.home.stateVersion = "24.05";
 }
