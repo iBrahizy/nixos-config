@@ -24,5 +24,5 @@ function y
 end
 
 function once
-	nix-shell -p $argv[1] --run "$argv"
+	nix shell nixpkgs#$argv[1] --c "$argv"
 end

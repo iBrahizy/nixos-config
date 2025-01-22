@@ -30,6 +30,7 @@
 			nix_shell = {
 				symbol = "sh ";
 				format = "[$symbol]($style)";
+				heuristic = true;
 			};
 		};
 	};
