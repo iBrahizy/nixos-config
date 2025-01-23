@@ -59,6 +59,7 @@ X = ["goto_line_start", "select_mode", "goto_line_end_newline"]
 "F" = "file_picker"
 "w" = ":w"
 "k" = "no_op"
+"e" = "file_browser_in_current_buffer_directory"
 
 [keys.select]
 X = "select_line_above"

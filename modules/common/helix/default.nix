@@ -7,7 +7,14 @@
 			defaultEditor = true;
 
 			package = (pkgs.unstable.helix.overrideAttrs (_: {
-				patches = [ ./inline-diagnostic-timeout.patch ];
+				patches = [
+					./inline-diagnostic-timeout.patch
+					(pkgs.fetchpatch {
+						name = "file-explorer";
+						url = "https://patch-diff.githubusercontent.com/raw/helix-editor/helix/pull/11285.diff";
+						sha256 = "sha256-zFtUUW/I0WF7RiCfiTxT4RUndR+4ix3kAgyJFYw74+I=";
+					})
+				];
 			}));
 		};
 
