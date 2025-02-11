@@ -6,5 +6,6 @@
 								# Update: the unstable version also seems to vunerable now...
 		pkgs.unstable.r2modman
 		(pkgs.callPackage /${flakeRoot}/packages/osu-lazer-bin/package.nix { })
+		pkgs.pokemmo-installer
 	];
 }
