@@ -18,3 +18,10 @@ name = "ruby"
 [language.indent]
 tab-width = 2
 unit = "  "
+
+[[language]]
+name = "markdown"
+
+[language.indent]
+tab-width = 4
+unit = "    "
