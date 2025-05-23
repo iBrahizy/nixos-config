@@ -5,7 +5,7 @@
 		jetbrains.idea-ultimate 
 		jdk17
 		gradle
-		postman
+		# postman
 		jdt-language-server
 	];
 
