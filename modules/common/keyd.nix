@@ -42,6 +42,10 @@
 
 				backspace = "delete";
 
+				"." = "volumeup";
+				"," = "volumedown";
+				"m" = "mute";
+
 				o = "enter";
 			}; 
 
