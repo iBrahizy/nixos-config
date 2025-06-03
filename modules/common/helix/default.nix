@@ -1,5 +1,10 @@
 { pkgs, config, ... }:
 
+let
+	toml = pkgs.formats.toml { };
+	helixConfig = toml.generate "config.toml" (import ./config.nix { });
+	helixLanguages = toml.generate "languages.toml" (import ./languages.nix { inherit pkgs; });
+in
 {
 	home-manager.users.${config.user} = {
 		programs.helix = {
@@ -18,8 +23,9 @@
 			}));
 		};
 
-		home.file.".config/helix".source = ./.;
-		# home.file.".config/helix".source = config.home-manager.users.${config.user}.lib.file.mkOutOfStoreSymlink ./.;
+		home.file.".config/helix/config.toml".source = helixConfig;
+		home.file.".config/helix/languages.toml".source = helixLanguages;
+		home.file.".config/helix/themes/catppuccin.toml".source = ./catppuccin.toml;
 	};
 
 	environment.sessionVariables = {
