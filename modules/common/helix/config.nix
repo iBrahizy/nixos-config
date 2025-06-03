@@ -80,6 +80,7 @@
 			"H" = "extend_to_line_start";
 			"C-k" = "keep_selections";
 			"K" = "no_op";
+			"G" = "goto_last_line";
 		};
 
 		insert = {
