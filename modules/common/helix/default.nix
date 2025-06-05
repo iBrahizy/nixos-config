@@ -1,9 +1,9 @@
-{ pkgs, config, ... }:
+{ pkgs, config, flakeRoot, ... }:
 
 let
 	toml = pkgs.formats.toml { };
 	helixConfig = toml.generate "config.toml" (import ./config.nix { });
-	helixLanguages = toml.generate "languages.toml" (import ./languages.nix { inherit pkgs; });
+	helixLanguages = toml.generate "languages.toml" (import ./languages.nix { inherit pkgs; inherit flakeRoot; });
 in
 {
 	home-manager.users.${config.user} = {

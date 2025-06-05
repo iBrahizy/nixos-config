@@ -55,7 +55,8 @@
 		fastfetch
 		nixd
 		nil
-		(pkgs.callPackage ./packages/cspell-lsp.nix {})
+		(pkgs.callPackage ./packages/cspell-lsp.nix { })
+		marksman
 	];
 	# Configure console keymap
 	console.keyMap = "uk";
