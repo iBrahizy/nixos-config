@@ -43,7 +43,7 @@
 
 	keys = {
 		normal = {
-			"0" = "goto_line_start";
+			"0" = "goto_first_nonwhitespace";
 			"G" = "goto_last_line";
 			"+" = "format_selections";
 			"=" = ":format";
@@ -69,6 +69,14 @@
 				"w" = ":w";
 				"k" = "no_op";
 				"e" = "file_browser_in_current_buffer_directory";
+			};
+
+			"]" = {
+				"n" = "@/[0-9]+<ret>";
+			};
+
+			"[" = {
+				"n" = "@?[0-9]+<ret>";
 			};
 		};
 
