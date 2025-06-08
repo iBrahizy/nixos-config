@@ -64,5 +64,14 @@ in
 			};
 			language-servers = [ "cspell" "marksman" ];
 		}
+
+		{
+			name = "typst";
+			indent = {
+				tab-width = 4;
+				unit = "    ";
+			};
+			language-servers = [ "cspell" "tinymist" ];
+		}
 	];
 }

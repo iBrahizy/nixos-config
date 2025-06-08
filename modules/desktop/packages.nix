@@ -17,5 +17,6 @@
 		vlc
 		ani-cli
 		firefox
+		zathura
 	];
 }
