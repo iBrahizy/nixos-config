@@ -9,16 +9,32 @@
 			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		rust-overlay = {
+			url = "github:oxalica/rust-overlay";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+
+		helix-plugin = {
+			url = "github:mattwparas/helix";
+			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.rust-overlay.follows = "rust-overlay";
+		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, ... }:
+	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, helix-plugin, ... }:
 	let
 		system = "x86_64-linux";
-		overlay-unstable = final: prev: {
+
+		unstable-overlay = final: prev: {
 			unstable = import nixpkgs-unstable {
 				inherit system;
 				config.allowUnfree = true;
 			};
+		};
+
+		helix-overlay = final: prev: {
+			helix-plugin.helix = helix-plugin.packages.${system}.default;
 		};
 
 		createConfig = hostname: nixpkgs.lib.nixosSystem {
@@ -40,7 +56,7 @@
 					};
 				}
 				# Overlays-module makes "pkgs.unstable" available in configuration.nix
-				({ ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
+				({ ... }: { nixpkgs.overlays = [ unstable-overlay helix-overlay ]; })
 				./configuration.nix
 				./hosts/${hostname}
 				./modules/common

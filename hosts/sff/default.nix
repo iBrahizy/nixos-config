@@ -11,6 +11,7 @@
 	];
 
 	modules.tablet.enable = true;
+	modules.helix-plugin.enable = false;
 
 	boot.supportedFilesystems = [ "ntfs" ];
 

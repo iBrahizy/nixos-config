@@ -23,7 +23,8 @@ let
 			"F" = "file_picker";
 			"w" = ":w";
 			"k" = "no_op";
-			"e" = "file_browser_in_current_buffer_directory";
+			"e" = "file_explorer_in_current_buffer_directory";
+			"E" = "file_explorer_in_current_directory";
 		};
 
 		"]" = {
