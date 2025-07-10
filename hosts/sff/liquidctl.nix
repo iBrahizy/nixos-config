@@ -1,18 +1,7 @@
 { pkgs, ... }:
 
 let
-	liquidctl = (pkgs.liquidctl.overridePythonAttrs (oldAttrs: rec {
-		version = "1.14.0";
-
-		src = pkgs.fetchFromGitHub {
-			owner = oldAttrs.pname;
-			repo = oldAttrs.pname;
-			tag = "v${version}";
-			hash = "sha256-HkMxYULeWcAYdlEI4N4qv7AGh/+xY0zuvV2mFPStPq8=";
-		};
-
-		patches = [ ];
-
+	liquidctl = (pkgs.liquidctl.overridePythonAttrs (oldAttrs: {
 		propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python312Packages.psutil ];
 
 		postInstall = oldAttrs.postInstall + ''
