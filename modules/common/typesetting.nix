@@ -6,6 +6,7 @@
 		(pkgs.callPackage /${flakeRoot}/packages/cspell-lsp.nix { })
 
 		typst
+		typstPackages.fontawesome
 		tinymist
 	];
 }
