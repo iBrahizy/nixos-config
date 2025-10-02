@@ -18,11 +18,11 @@
 				i3status
 			];
 		};
+
+		displayManager.gdm.enable = true;
+		desktopManager.gnome.enable = true;
 	};
 
-	services.desktopManager = {
-		plasma6.enable = true;
-	};
 
 	environment.defaultPackages = with pkgs; [
 		xclip
