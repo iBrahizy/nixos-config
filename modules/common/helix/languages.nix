@@ -23,11 +23,18 @@ let
 	};
 in
 {
-	# Creates a cspell.json if we are in a git directory, or uses the one thats present
-	# If we aren't in a git directory it will use the default one
 	language-server = {
+		# Creates a cspell.json if we are in a git directory, or uses the one thats present
+		# If we aren't in a git directory it will use the default one
 		cspell = {
 			command = "${init-script}/bin/init.fish";
+		};
+		jdtls = {
+			command = "jdtls";
+			config.java.project.referencedLibraries = [
+				"${pkgs.jogl}/share/java/*"
+			];
+			
 		};
 	};
 
@@ -72,6 +79,15 @@ in
 				unit = "    ";
 			};
 			language-servers = [ "cspell" "tinymist" ];
+		}
+
+		{
+			name = "java";
+			indent = {
+				tab-width = 2;
+				unit = "  ";
+			};
+			language-servers = [ "jdtls" ];
 		}
 	];
 }
