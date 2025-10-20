@@ -8,11 +8,11 @@
 
 let
 	pname = "osu-lazer-bin";
-	version = "2025.912.0-lazer";
+	version = "2025.1019.0-tachyon";
 
 	src = fetchurl {
 		url = "https://github.com/ppy/osu/releases/download/${version}/osu.AppImage";
-		hash = "sha256-73UY3RJp0pFfbxRWX8qSnLeoZB/BRGtucmQClJP7Qwg=";
+		hash = "sha256-zhKTCsg6/Fyzsy4s1xGCmPvxMS3huDNhxLUhaS6W1tE=";
 	};
 
 	meta = {
