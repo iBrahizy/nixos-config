@@ -31,10 +31,14 @@ in
 		};
 		jdtls = {
 			command = "jdtls";
-			config.java.project.referencedLibraries = [
-				"${pkgs.jogl}/share/java/*"
-			];
-			
+			config.java.project = {
+				referencedLibraries = [
+					"${pkgs.jogl}/share/java/*"
+				];
+				sourcePaths = [
+					"."
+				];
+			};
 		};
 	};
 
