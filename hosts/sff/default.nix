@@ -9,6 +9,7 @@
 		/${modules}/dev
 		/${modules}/uni
 	];
+	boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	modules.tablet.enable = true;
 	modules.helix-plugin.enable = false;

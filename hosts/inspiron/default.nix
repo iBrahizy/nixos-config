@@ -9,8 +9,6 @@
 		/${modules}/uni
 	];
 
-	modules.display-manager = "gdm";
-
 	# Blacklisting nvidia, relying on the igpu
 	boot.extraModprobeConfig = ''
 		blacklist nouveau
