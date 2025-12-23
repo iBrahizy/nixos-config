@@ -3,11 +3,10 @@
 {
 	home-manager.users.${config.user}.programs.git = {
 		enable = true;
-		userEmail = "imahmood1710@gmail.com";
-		userName = "Ibrahim Mahmood-Qureshi";
-
-		extraConfig = {
+		settings = {
 			core.editor = "hx";
+			user.email = "imahmood1710@gmail.com";
+			user.name = "Ibrahim Mahmood-Qureshi";
 		};
 	};
 }

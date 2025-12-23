@@ -2,7 +2,8 @@
 
 let
 	liquidctl = (pkgs.liquidctl.overridePythonAttrs (oldAttrs: {
-		propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python312Packages.psutil ];
+		# propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python312Packages.psutil ];
+		propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python3Packages.psutil ];
 
 		postInstall = oldAttrs.postInstall + ''
 			cp extra/yoda.py $out/bin/yoda

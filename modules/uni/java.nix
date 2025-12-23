@@ -2,7 +2,7 @@
 
 {
 	environment.defaultPackages = with pkgs; [
-		jetbrains.idea-ultimate 
+		jetbrains.idea
 		jdk17
 		gradle
 		# postman
