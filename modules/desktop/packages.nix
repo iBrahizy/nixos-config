@@ -6,17 +6,9 @@
 		pavucontrol
 		feh
 		vesktop
-		flameshot
-		(wrapOBS {
-			plugins = with obs-studio-plugins; [
-				wlrobs
-				obs-backgroundremoval
-				obs-pipewire-audio-capture
-			];
-		})
+		obs-studio
 		vlc
-		ani-cli
 		firefox
-		zathura
+		spotify
 	];
 }

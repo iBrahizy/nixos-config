@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-	# Configure keymap in X11
 	services.displayManager.gdm.enable = true;
 	services.desktopManager.gnome.enable = true;
 

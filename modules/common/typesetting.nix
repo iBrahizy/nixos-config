@@ -7,5 +7,7 @@
 
 		typst
 		tinymist
+
+		zathura
 	];
 }
