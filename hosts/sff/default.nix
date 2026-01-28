@@ -50,10 +50,13 @@
 		SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", TAG+="uaccess"
 	'';
 
-	services.flatpak.enable = true;
+	# services.flatpak.enable = true;
 	environment.defaultPackages = with pkgs; [ chromium dolphin-emu ]; # for wootingly
 
 	# version nix was originally installed on
 	system.stateVersion = "24.05";
 	home-manager.users.ibrahizy.home.stateVersion = "24.05";
+
+	boot.initrd.kernelModules = [ "cryptd" ]; # add cryptd
+	boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-label/NIXLUKS";
 }
