@@ -13,7 +13,7 @@
 			shell = pkgs.fish;
 			isNormalUser = true;
 			description = config.user;
-			extraGroups = [ "networkmanager" "wheel" "libvirtd" "proc" ];
+			extraGroups = [ "openrazer" "networkmanager" "wheel" "libvirtd" "proc" ];
 		};
 
 		home-manager.users.${config.user}.xdg.userDirs = 
