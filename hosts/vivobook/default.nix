@@ -11,6 +11,6 @@
 
 	powerManagement.enable = true;
 
-	system.stateVersion = "24.05";
-	home-manager.users.ibrahizy.home.stateVersion = "24.05";
+	system.stateVersion = "25.11";
+	home-manager.users.ibrahizy.home.stateVersion = "25.11";
 }
