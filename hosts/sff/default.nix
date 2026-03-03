@@ -54,7 +54,7 @@
         # Generic Wooting devices
         SUBSYSTEM=="hidraw", ATTRS{idVendor}=="31e3", TAG+="uaccess"
         SUBSYSTEM=="usb", ATTRS{idVendor}=="31e3", TAG+="uaccess"
-		'';
+        '';
 
 	# services.flatpak.enable = true;
 	environment.defaultPackages = with pkgs; [ chromium dolphin-emu openrazer-daemon razergenie polychromatic ]; # for wootingly
