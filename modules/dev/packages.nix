@@ -9,7 +9,6 @@
 			python-lsp-server
 			numpy
 			scipy
-			jupyterlab
 			pandas
 			statsmodels
 			scikit-learn

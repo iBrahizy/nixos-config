@@ -15,5 +15,6 @@
 	environment.defaultPackages = with pkgs; [ 
 		gamemode # used in some steam launch options 
 		protontricks
+		mangohud
 	];
 }

@@ -14,6 +14,7 @@
 
 	modules.tablet.enable = true;
 	modules.helix-plugin.enable = false;
+	modules.csgo.enable = true;
 
 	boot.supportedFilesystems = [ "ntfs" ];
 
