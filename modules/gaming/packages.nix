@@ -7,5 +7,6 @@
 		pkgs.unstable.r2modman
 		(pkgs.callPackage /${flakeRoot}/packages/osu-lazer-bin/package.nix { })
 		pkgs.pokemmo-installer
+		pkgs.wine
 	];
 }

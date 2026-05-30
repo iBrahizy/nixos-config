@@ -22,6 +22,10 @@
 	# Select internationalisation properties.
 	i18n.defaultLocale = "en_GB.UTF-8";
 
+	i18n.extraLocales = [
+		"ja_JP.UTF-8/UTF-8"
+	];
+
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "en_GB.UTF-8";
 		LC_IDENTIFICATION = "en_GB.UTF-8";
