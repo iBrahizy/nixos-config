@@ -12,8 +12,8 @@ let
         #!/usr/bin/env bash
         set -euo pipefail
 
-        ${pkgs.xorg.xrandr}/bin/xrandr --output 0 --primary
-        read xxxx width height < <(${pkgs.xorg.xrandr}/bin/xrandr --query | grep -Po 'primary \d+x\d+' | tr x ' ')
+        ${pkgs.xrandr}/bin/xrandr --output 0 --primary
+        read xxxx width height < <(${pkgs.xrandr}/bin/xrandr --query | grep -Po 'primary \d+x\d+' | tr x ' ')
         echo "mat_setvideomode $width $height 1" > "$HOME/.local/share/Steam/steamapps/common/csgo legacy/csgo/cfg/setvideomode.cfg"
 
         rm -rf "$HOME/.local/share/Steam/steamapps/common/csgo legacy/platform/vgui/fonts" || true

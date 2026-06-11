@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+	# Known python docs issue in 26.05, known work around
+	documentation.doc.enable = false;
+	
 	environment.defaultPackages = with pkgs; [
 		gcc
 		# python3

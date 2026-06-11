@@ -21,6 +21,7 @@
 			homeDir = config.home-manager.users.${config.user}.home.homeDirectory;
 		in 
 		{
+			setSessionVariables = true;
 			enable = true;
 			desktop = "${homeDir}/other/desktop";
 			download = "${homeDir}/downloads";

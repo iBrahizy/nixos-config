@@ -29,6 +29,8 @@ in
 
 		gtk = {
 			enable = true;
+			# Not sure if this is the correct behaviour
+			gtk4.theme = null;
 			theme.name = "catppuccin-mocha-blue-standard";
 			theme.package = custom-catppuccin-gtk;
 		};	

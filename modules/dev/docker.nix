@@ -2,7 +2,7 @@
 
 {
 	virtualisation.docker.enable = true;
-	environment.systemPackages = [ pkgs.docker-compose pkgs.xorg.xhost ];
+	environment.systemPackages = [ pkgs.docker-compose pkgs.xhost ];
 
 	users.extraGroups.docker.members = [ config.user ];
 }
