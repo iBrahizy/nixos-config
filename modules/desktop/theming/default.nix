@@ -30,9 +30,11 @@ in
 		gtk = {
 			enable = true;
 			# Not sure if this is the correct behaviour
-			gtk4.theme = null;
 			theme.name = "catppuccin-mocha-blue-standard";
 			theme.package = custom-catppuccin-gtk;
+
+			gtk4.theme.name = "catppuccin-mocha-blue-standard";
+			gtk4.theme.package = custom-catppuccin-gtk;
 		};	
 	};
 }
