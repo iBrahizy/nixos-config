@@ -7,5 +7,6 @@
 	environment.defaultPackages = with pkgs; [
 		wl-clipboard
 		wl-color-picker # not sure if i care tbh
+		gnomeExtensions.paperwm
 	];
 }

@@ -22,7 +22,7 @@ let
 
         export MANGHUD_CONFIGFILE=${modules}/gaming/mangohud.conf
 
-        ${pkgs.gamemode}/bin/gamemoderun ${pkgs.libstrangle}/bin/strangle 237 ${pkgs.mangohud}/bin/mangohud "$@" -- -windowed -width 1920 -height 1080 -vulkan -nologo -novid 
+        ${pkgs.gamemode}/bin/gamemoderun ${pkgs.libstrangle}/bin/strangle 384 ${pkgs.mangohud}/bin/mangohud "$@" -- -windowed -width 1920 -height 1080 -vulkan -nologo -novid 
          '';
 
     launchCSGO = pkgs.stdenv.mkDerivation {
